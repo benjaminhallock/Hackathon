@@ -24,6 +24,8 @@
 		4CCACFDC165693F4008E9D69 /* PHBridgeSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CCACFD3165693F4008E9D69 /* PHBridgeSelectionViewController.xib */; };
 		4CCACFDD165693F4008E9D69 /* press_smartbridge.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CCACFD5165693F4008E9D69 /* press_smartbridge.png */; };
 		4CCACFDE165693F4008E9D69 /* press_smartbridge@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CCACFD6165693F4008E9D69 /* press_smartbridge@2x.png */; };
+		61D746D41AAB493700B9F0DF /* GimbalAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 61D746D31AAB493700B9F0DF /* GimbalAdapter.m */; };
+		61D746D71AAB4ACD00B9F0DF /* libUAirship-5.1.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 61D746D61AAB4ACD00B9F0DF /* libUAirship-5.1.1.a */; };
 		87194E79184F7FA700576916 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87194E78184F7FA700576916 /* CoreGraphics.framework */; };
 		C225874D1AAB46B2002BC82F /* Gimbal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C225874C1AAB46B2002BC82F /* Gimbal.framework */; };
 		C2B19E9C1AAB39D40041E7CD /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C2B19E9B1AAB39D40041E7CD /* libz.dylib */; };
@@ -63,10 +65,12 @@
 		4CCACFD3165693F4008E9D69 /* PHBridgeSelectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PHBridgeSelectionViewController.xib; sourceTree = "<group>"; };
 		4CCACFD5165693F4008E9D69 /* press_smartbridge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = press_smartbridge.png; sourceTree = "<group>"; };
 		4CCACFD6165693F4008E9D69 /* press_smartbridge@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "press_smartbridge@2x.png"; sourceTree = "<group>"; };
+		61D746D21AAB493700B9F0DF /* GimbalAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GimbalAdapter.h; sourceTree = "<group>"; };
+		61D746D31AAB493700B9F0DF /* GimbalAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GimbalAdapter.m; sourceTree = "<group>"; };
+		61D746D61AAB4ACD00B9F0DF /* libUAirship-5.1.1.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libUAirship-5.1.1.a"; path = "Airship/libUAirship-5.1.1.a"; sourceTree = "<group>"; };
 		87194E78184F7FA700576916 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		C225874C1AAB46B2002BC82F /* Gimbal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Gimbal.framework; sourceTree = "<group>"; };
 		C2B19E9B1AAB39D40041E7CD /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		C2B19E9D1AAB39FA0041E7CD /* Gimbal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gimbal.framework; path = ../../gimbalsdk_2/Frameworks/Gimbal.framework; sourceTree = "<group>"; };
 		C2B19E9F1AAB3E670041E7CD /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		F71523F218337FD50033689C /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
 		F71523F318337FD50033689C /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
@@ -95,6 +99,7 @@
 				C2B19E9C1AAB39D40041E7CD /* libz.dylib in Frameworks */,
 				87194E79184F7FA700576916 /* CoreGraphics.framework in Frameworks */,
 				4CCACF97165692D4008E9D69 /* UIKit.framework in Frameworks */,
+				61D746D71AAB4ACD00B9F0DF /* libUAirship-5.1.1.a in Frameworks */,
 				16A5879519B9D21D00C243A6 /* HueSDK_iOS.framework in Frameworks */,
 				4CCACF99165692D4008E9D69 /* Foundation.framework in Frameworks */,
 			);
@@ -116,6 +121,7 @@
 		4CCACF87165692D4008E9D69 = {
 			isa = PBXGroup;
 			children = (
+				61D746D51AAB494200B9F0DF /* Gimbal */,
 				4CCACFCA165693F4008E9D69 /* SDKWizard */,
 				4CCACF9C165692D4008E9D69 /* HueQuickStartApp-iOS */,
 				4CCACF95165692D4008E9D69 /* Frameworks */,
@@ -134,8 +140,8 @@
 		4CCACF95165692D4008E9D69 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				61D746D61AAB4ACD00B9F0DF /* libUAirship-5.1.1.a */,
 				C225874C1AAB46B2002BC82F /* Gimbal.framework */,
-				C2B19E9D1AAB39FA0041E7CD /* Gimbal.framework */,
 				C2B19E9B1AAB39D40041E7CD /* libz.dylib */,
 				16A5879419B9D21D00C243A6 /* HueSDK_iOS.framework */,
 				87194E78184F7FA700576916 /* CoreGraphics.framework */,
@@ -196,6 +202,16 @@
 			);
 			name = Resources;
 			path = resources;
+			sourceTree = "<group>";
+		};
+		61D746D51AAB494200B9F0DF /* Gimbal */ = {
+			isa = PBXGroup;
+			children = (
+				61D746D21AAB493700B9F0DF /* GimbalAdapter.h */,
+				61D746D31AAB493700B9F0DF /* GimbalAdapter.m */,
+			);
+			name = Gimbal;
+			path = "HueQuickStartApp-iOS";
 			sourceTree = "<group>";
 		};
 		F71523F118337FD50033689C /* Lumberjack */ = {
@@ -311,6 +327,7 @@
 				F715240118337FD50033689C /* DDAbstractDatabaseLogger.m in Sources */,
 				4C1C84551681F010003EE085 /* PHLoadingViewController.m in Sources */,
 				F715240318337FD50033689C /* DDFileLogger.m in Sources */,
+				61D746D41AAB493700B9F0DF /* GimbalAdapter.m in Sources */,
 				F7ADC2A017FDAAA70038A1D6 /* MainViewController.m in Sources */,
 				F715240618337FD50033689C /* ContextFilterLogFormatter.m in Sources */,
 			);
@@ -396,14 +413,20 @@
 					"$(inherited)",
 					../,
 					"$(PROJECT_DIR)",
-					/Users/mrbubbles/Google,
-					Drive/gimbalsdk_2/Frameworks,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HueQuickStartApp-iOS/Hackathon-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"Airship/**",
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				INFOPLIST_FILE = "HueQuickStartApp-iOS/Hackathon-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Airship",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = Hackathon;
 				PROVISIONING_PROFILE = "";
@@ -422,14 +445,20 @@
 					"$(inherited)",
 					../,
 					"$(PROJECT_DIR)",
-					/Users/mrbubbles/Google,
-					Drive/gimbalsdk_2/Frameworks,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HueQuickStartApp-iOS/Hackathon-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"Airship/**",
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				INFOPLIST_FILE = "HueQuickStartApp-iOS/Hackathon-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Airship",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = Hackathon;
 				PROVISIONING_PROFILE = "";
